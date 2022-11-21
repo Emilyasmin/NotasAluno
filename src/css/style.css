@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Press Start 2P', cursive;
+
+}
+
+body {
+    background-color: #b59cf4;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 2%;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+main {
+    height: 80vh;
+    width: 100%;
+    max-width: 1200px;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.Cadastrar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    height: 100%;
+    width: 30%;
+    padding: 5%;
+    border: 1px solid #b59cf4;
+    border-radius: 30px;
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.247);
+}
+
+.Cadastrar form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+}
+
+.Cadastrar form input {
+    border: 2px solid #333;
+    border-radius: 8px;
+    color: #333;
+    margin-bottom: 2%;
+    width: 100%;
+    max-width: 500px;
+    outline: none;
+    padding: 3%;
+
+}
+
+.Cadastrar form .buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 10%;
+    width: 100%;
+    height: 100%;
+}
+
+.Cadastrar form .buttons button {
+    background-color: #b59cf4;
+    border: 1px solid #b59cf4;
+    border-radius: 8px;
+    color: #fff;
+    cursor: pointer;
+    width: 100%;
+    max-width: 500px;
+    margin: 10%;
+    padding: 10%;
+
+}
+
+.AlunosCadastrados {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    height: 100%;
+    width: 50%;
+    padding: 5%;
+    border: 1px solid #b59cf4;
+    border-radius: 30px;
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.247);
+}
+
+.TituloDosCadastrados {
+    width: 100%;
+    justify-content: space-around;
+    display: flex;
+    flex-direction: row;
+}
+
+.TituloDosCadastrados button {
+    border: 10px;
+    border-radius: 40%;
+    color: #333;
+    background-color: white;
+    font-size: 25px;
+    cursor: pointer;
+    margin-bottom: 5%;
+}
+
+.AlunosCadastrados table {
+    width: 100%;
+    max-width: fit-content;
+    /* border: thin solid #333; */
+    /* border-radius: 10px; */
+    caption-side: bottom;
+    min-height: 80%;
+    border-collapse: collapse;
+
+}
+
+.AlunosCadastrados table thead {
+    background-color: #b59cf4;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.AlunosCadastrados table thead th {
+    border: thin solid #fff;
+    padding:10px;
+    max-width: 100%;   
+}
+
+.AlunosCadastrados tbody tr:nth-child(odd){
+    background:#ece8f8;
+
+}
+
+.AlunosCadastrados tbody tr:hover{
+    background:#b59cf4;
+}
+
+/* table tbody th {
+    max-height: 15px;
+    justify-content: space-evenly;
+    align-items: center; 
+
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .AlunosCadastrados table,th,td {
+    border: 1px solid black;
+}
+
+table {
+    border-collapse: collapse;
+    margin: auto;
+    width: 100%;
+}
+
+th,td {
+    padding: 10px;
+    text-align: center;
+    width: 120px;
+}
+
+th {
+    font-weight: bold;
+}
+
+
+tr:nth-child(even) {
+    background-color: #DCEBE6;
+}
+
+tr:hover:nth-child(1n + 2) {
+    background-color: #085F63;
+    color: #fff;
+}
+ */
+

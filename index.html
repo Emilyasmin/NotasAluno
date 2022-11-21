@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notas Aluno</title>
+    <link rel="stylesheet" href="./src/css/style.css">
+    <link rel="shortcut icon" href="./src/assets/icon.png" type="image/x-icon">
+    <!-- <script type="module" src="./src/js/class.js" defer></script>
+    <script type="module" src="./src/js/index.js" defer></script> -->
+
+    <script typr="" src="./src/js/teste.js" defer></script>
+</head>
+<body>
+    <main class="container">
+        <section class="Cadastrar">
+            <h1>Cadastrar Aluno</h1>
+            <form>
+                <h4>Nome</h4>
+                <input type="text" placeholder="Nome do aluno" id="NomeAluno" required>
+                <h4>Matrícula</h4>
+                <input type="text" placeholder="Matrícula do aluno" id="MatriculaAluno" required>
+                <h4>Nota 1</h4>
+                <input type="text" placeholder="Informe a nota 1" id="Nota1" required>
+                <h4>Nota 2</h4>
+                <input type="text" placeholder="Informe a nota 2" id="Nota2" required>
+                <h4>Nota 3</h4>
+                <input type="text" placeholder="Informe a nota 3" id="Nota3" required>
+
+                <div class="buttons">
+                    <button type="submit">Cadastrar</button>
+                    <button type="reset">Limpar</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="AlunosCadastrados">
+            <div class="TituloDosCadastrados">
+                <h2>Alunos cadastrados</h2>
+                <button class="deleteAll" style="cursor: pointer;" title="Apagar todos os alunos" id="deleteAll">X</button>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Matrícula</th>
+                        <th>Nota 1</th>
+                        <th>Nota 2</th>
+                        <th>Nota 3</th>
+                        <th>Média</th>
+                        <th>Excluir</th> 
+                    </tr>
+                </thead>
+                <tbody class="RegistosAluno">
+
+                </tbody>
+            </table>
+        </section>
+    </main>
+</body>
+</html>
