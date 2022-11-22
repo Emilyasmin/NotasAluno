@@ -15,18 +15,18 @@
 <body>
     <main class="container">
         <section class="Cadastrar">
-            <h1>Cadastrar Aluno</h1>
+            <h1 id="h1Form">Cadastrar Aluno</h1>
             <form>
                 <h4>Nome</h4>
                 <input type="text" placeholder="Nome do aluno" id="NomeAluno" required>
                 <h4>Matrícula</h4>
                 <input type="text" placeholder="Matrícula do aluno" id="MatriculaAluno" required>
                 <h4>Nota 1</h4>
-                <input type="text" placeholder="Informe a nota 1" id="Nota1" required>
+                <input type="number" placeholder="Informe a nota 1" id="Nota1" required>
                 <h4>Nota 2</h4>
-                <input type="text" placeholder="Informe a nota 2" id="Nota2" required>
+                <input type="number" placeholder="Informe a nota 2" id="Nota2" required>
                 <h4>Nota 3</h4>
-                <input type="text" placeholder="Informe a nota 3" id="Nota3" required>
+                <input type="number" placeholder="Informe a nota 3" id="Nota3" required>
 
                 <div class="buttons">
                     <button type="submit">Cadastrar</button>
@@ -37,7 +37,7 @@
 
         <section class="AlunosCadastrados">
             <div class="TituloDosCadastrados">
-                <h2>Alunos cadastrados</h2>
+                <h1 id="h1Cadastrados">Alunos cadastrados</h1>
                 <button class="deleteAll" style="cursor: pointer;" title="Apagar todos os alunos" id="deleteAll">X</button>
             </div>
             <table>

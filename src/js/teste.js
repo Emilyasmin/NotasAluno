@@ -46,24 +46,28 @@ FormularioAluno.onsubmit = function(event){
     trElement.appendChild(tdElementNota3)
 
     const tdElementMedia= document.createElement('td')
-    tdElementMedia.setAttribute('id', 'calculaMedia')
-    tdElementMedia.innerText = calculoMedia()
+    tdElementMedia.setAttribute('id', 'media')
+    tdElementMedia.innerText = Media()
     trElement.appendChild(tdElementMedia)
     
-    
-    calculoMedia()
 
     const tdElementBtnApagaAluno = document.createElement('td')
     tdElementBtnApagaAluno.innerHTML = '<button class="ApagarAluno" style="cursor: pointer;" title="Apagar todos os alunos" id="ApagarAluno">X</button>'
     trElement.appendChild(tdElementBtnApagaAluno)
 
+
+    tdElementBtnApagaAluno.onclick = function(){
+        let questionToUser = confirm('Deseja apagar todos este aluno?')
+        if(questionToUser) {
+            trElement.innerHTML = ''
+        }
+    }
 }
 }
 
 
 FormularioAluno.onsubmit = function (event) {
     event.preventDefault()
-
     novoAluno()
 }
 
@@ -79,74 +83,16 @@ btnApagarTodos.onclick = function() {
     }
 }
 
-function calculoMedia() {
-    let n1 = parseFloat(inputNota1).value;
-    let n2 = parseFloat(inputNota2).value;
-    let n3 = parseFloat(inputNota3).value;
 
-    var media = ((n1 + n2 + n3) / 3)
-    
-    return(media).toFixed(2)
+function Media(){
+    let n1 = parseFloat(inputNota1.value);
+    let n2 = parseFloat(inputNota2.value);
+    let n3 = parseFloat(inputNota3.value);
+    let resultado = ((n1 + n2 + n3) / 3).toFixed(1);
+
+    return(
+        parseFloat(resultado)
+  )
+
 
 }
-
-
-
-
-// function ApagarAluno() {
-//     trElement.innerHTML = ''
-// }
-
-// btnApagarAluno.onclick = function() {
-//     let questionToUser = confirm('Deseja apagar este aluno?')
-//     if(questionToUser) {
-//         ApagarAluno()
-//     }
-// }
-
-
-
-
-// function ApagarAluno() {
-//     const btnApagarAluno = document.querySelector('#ApagarAluno')
-    
-//     btnApagarAluno(button => {
-//         button.addEventListener('click', () => {
-//             const elementToRemove = button.closest('tr')
-//             elementToRemove.remove()
-//         })
-//     })
-
-// }
-
-
-
-
-
-
-
-
-
-// function media(){
-//     var nota1 = parseFloat(document.getElementById("nota1").value);
-//     var nota2 = parseFloat(document.getElementById("nota2").value);
-
-//     var media = (nota1 + nota2)/2 ;
-
-
-// var nota1 = parseFloat(document.getElementById("nota1").value);
-//      var nota2 = parseFloat(document.getElementById("nota2").value);
-
-
-
-
-
-
-
-// let nome = inputNome.value;
-// let matricula = inputMatricula.value;
-// let n1 = inputNota1.value;
-// let n2 = inputNota2.value;
-// let n3 = inputNota3.value;
-
-
