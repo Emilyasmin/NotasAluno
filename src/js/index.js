@@ -13,8 +13,6 @@ let btnApagarAluno = document.querySelector('#ApagarAluno')
 function novoAluno() {
 FormularioAluno.onsubmit = function(event){
     event.preventDefault();
-    // let Aluno = (inputNome.value,inputMatricula.value,inputNota1.value,inputNota2.value,inputNota3.value)
-    // console.log(Aluno);
 
     const trElement = document.createElement('tr')
     trElement.setAttribute('class','listItem')
@@ -57,7 +55,7 @@ FormularioAluno.onsubmit = function(event){
 
 
     tdElementBtnApagaAluno.onclick = function(){
-        let questionToUser = confirm('Deseja apagar todos este aluno?')
+        let questionToUser = confirm('Deseja apagar este aluno?')
         if(questionToUser) {
             trElement.innerHTML = ''
         }
