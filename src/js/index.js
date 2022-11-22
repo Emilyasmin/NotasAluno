@@ -91,6 +91,4 @@ function Media(){
     return(
         parseFloat(resultado)
   )
-
-
 }
