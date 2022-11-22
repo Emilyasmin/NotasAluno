@@ -1,84 +1,98 @@
-import Student from '../js/class.js'
+let inputNome = document.getElementById('NomeAluno')
+let inputMatricula = document.getElementById('MatriculaAluno')
+let inputNota1 = document.getElementById('Nota1')
+let inputNota2 = document.getElementById('Nota2')
+let inputNota3 = document.getElementById('Nota3')
+let FormularioAluno = document.querySelector('form')
+let tabelaRegistros = document.querySelector('.RegistosAluno')
+let btnApagarTodos = document.querySelector('#deleteAll')
 
-const inputStudentName = document.getElementById('studentName')
-const inputStudentRegistration = document.getElementById('studentRegistration')
-const inputStudentNote1 = (document.getElementById('studentNote1'))
-const inputStudentNote2 = document.getElementById('studentNote2')
-const inputStudentNote3 = document.getElementById('studentNote3')
-const studentForm = document.querySelector('form')
-const tableStudentInfo = document.querySelector('.studentRegistryList')
-const btnDeleteAllStudents = document.querySelector('#deleteAllStudents')
+let trElement = document.querySelector('.listItem')
+let btnApagarAluno = document.querySelector('#ApagarAluno')
 
-
-function createStudent() {
-    let student = new Student(inputStudentName.value, inputStudentRegistration.value, inputStudentNote1.value, inputStudentNote2.value, inputStudentNote3.value)
-
+function novoAluno() {
+FormularioAluno.onsubmit = function(event){
+    event.preventDefault();
+    // let Aluno = (inputNome.value,inputMatricula.value,inputNota1.value,inputNota2.value,inputNota3.value)
+    // console.log(Aluno);
 
     const trElement = document.createElement('tr')
-    trElement.setAttribute('class', 'listItem')
-    tableStudentInfo.appendChild(trElement)
+    trElement.setAttribute('class','listItem')
+    tabelaRegistros.appendChild(trElement)
 
-    const tdElementName = document.createElement('td')
-    tdElementName.setAttribute('id', 'name')
-    tdElementName.innerText = student.getName()
-    trElement.appendChild(tdElementName)
+    const tdElementNome = document.createElement('td')
+    tdElementNome.setAttribute('id','nome')
+    tdElementNome.innerHTML = inputNome.value
+    trElement.appendChild(tdElementNome)
 
-    const tdElementRegistration = document.createElement('td')
-    tdElementRegistration.setAttribute('id', 'registration')
-    tdElementRegistration.innerText = student.getRegistration()
-    trElement.appendChild(tdElementRegistration)
+    const tdElementMatricula = document.createElement('td')
+    tdElementMatricula.setAttribute('id','matricula')
+    tdElementMatricula.innerHTML = inputMatricula.value
+    trElement.appendChild(tdElementMatricula)
 
-    const tdElementNote1 = document.createElement('td')
-    tdElementNote1.setAttribute('id', 'note1')
-    tdElementNote1.innerText = student.getNote1()
-    trElement.appendChild(tdElementNote1)
+    const tdElementNota1 = document.createElement('td')
+    tdElementNota1.setAttribute('id','n1')
+    tdElementNota1.innerHTML = inputNota1.value
+    trElement.appendChild(tdElementNota1)
 
-    const tdElementNote2 = document.createElement('td')
-    tdElementNote2.setAttribute('id', 'note2')
-    tdElementNote2.innerText = student.getNote2()
-    trElement.appendChild(tdElementNote2)
+    const tdElementNota2 = document.createElement('td')
+    tdElementNota2.setAttribute('id','n2')
+    tdElementNota2.innerHTML = inputNota2.value
+    trElement.appendChild(tdElementNota2)
 
-    const tdElementNote3 = document.createElement('td')
-    tdElementNote3.setAttribute('id', 'note3')
-    tdElementNote3.innerText = student.getNote3()
-    trElement.appendChild(tdElementNote3)
+    const tdElementNota3 = document.createElement('td')
+    tdElementNota3.setAttribute('id','n3')
+    tdElementNota3.innerHTML = inputNota3.value
+    trElement.appendChild(tdElementNota3)
 
-    const tdElementAverage = document.createElement('td')
-    tdElementAverage.setAttribute('id', 'average')
-    tdElementAverage.innerText = student.calculateAverage()
-    trElement.appendChild(tdElementAverage)
-
-    const tdElementBtnDeleteStudent = document.createElement('td')
-    tdElementBtnDeleteStudent.innerHTML = '<i class="fa-solid fa-trash delete" style="cursor: pointer;" title="Apagar aluno"></i>'
-    trElement.appendChild(tdElementBtnDeleteStudent)
+    const tdElementMedia= document.createElement('td')
+    tdElementMedia.setAttribute('id', 'media')
+    tdElementMedia.innerText = Media()
+    trElement.appendChild(tdElementMedia)
     
 
-    deleteStudent()
+    const tdElementBtnApagaAluno = document.createElement('td')
+    tdElementBtnApagaAluno.innerHTML = '<button class="ApagarAluno" style="cursor: pointer;" title="Apagar todos os alunos" id="ApagarAluno">X</button>'
+    trElement.appendChild(tdElementBtnApagaAluno)
+
+
+    tdElementBtnApagaAluno.onclick = function(){
+        let questionToUser = confirm('Deseja apagar todos este aluno?')
+        if(questionToUser) {
+            trElement.innerHTML = ''
+        }
+    }
+}
 }
 
-function deleteStudent() {
-    const deleteButtons = document.querySelectorAll('i.delete')
-    deleteButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const elementToRemove = button.closest('tr')
-            elementToRemove.remove()
-        })
-    })
-}
 
-function deleteAllStudent() {
-    tableStudentInfo.innerHTML = ''
-}
-
-studentForm.onsubmit = function (event) {
+FormularioAluno.onsubmit = function (event) {
     event.preventDefault()
-
-    createStudent()
+    novoAluno()
 }
 
-btnDeleteAllStudents.onclick = function() {
+
+function ApagarTodosAlunos() {
+    tabelaRegistros.innerHTML = ''
+}
+
+btnApagarTodos.onclick = function() {
     let questionToUser = confirm('Deseja apagar todos os alunos?')
     if(questionToUser) {
-        deleteAllStudent()
+        ApagarTodosAlunos()
     }
+}
+
+
+function Media(){
+    let n1 = parseFloat(inputNota1.value);
+    let n2 = parseFloat(inputNota2.value);
+    let n3 = parseFloat(inputNota3.value);
+    let resultado = ((n1 + n2 + n3) / 3).toFixed(1);
+
+    return(
+        parseFloat(resultado)
+  )
+
+
 }

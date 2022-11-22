@@ -125,8 +125,6 @@ main {
     text-align: center;
     width: 100%;
     max-width: fit-content;
-    /* border: thin solid #333; */
-    /* border-radius: 10px; */
     caption-side: bottom;
     min-height: 80%;
     border-collapse: collapse;
