@@ -50,7 +50,7 @@ FormularioAluno.onsubmit = function(event){
     
 
     const tdElementBtnApagaAluno = document.createElement('td')
-    tdElementBtnApagaAluno.innerHTML = '<button class="ApagarAluno" style="cursor: pointer;" title="Apagar todos os alunos" id="ApagarAluno">X</button>'
+    tdElementBtnApagaAluno.innerHTML = '<button class="ApagarAluno" style="cursor: pointer;" title="Apagar Aluno" id="ApagarAluno">X</button>'
     trElement.appendChild(tdElementBtnApagaAluno)
 
 
